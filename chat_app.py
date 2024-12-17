@@ -11,8 +11,10 @@ import re
 # Configuração da chave da API
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
+# Verificação da variável de ambiente
 if not GOOGLE_API_KEY:
     st.error("Erro: A variável de ambiente GOOGLE_API_KEY não está definida.")
+    st.info("Por favor, configure a variável de ambiente GOOGLE_API_KEY com sua chave de API do Google.")
     st.stop()
 
 genai.configure(api_key=GOOGLE_API_KEY)
